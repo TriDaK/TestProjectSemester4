@@ -1,3 +1,4 @@
+using GoogleMapsComponents;
 using TestProjectSemester4.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddBlazorGoogleMaps(builder.Configuration["ApiKey:GoogleMapsApiKey"]); // API key from appsettings
 
 var app = builder.Build();
 
@@ -25,3 +27,6 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 app.Run();
+
+
+// My Project 60460
