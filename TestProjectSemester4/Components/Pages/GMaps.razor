@@ -1,0 +1,33 @@
+﻿@page "/gmaps"
+@using GoogleMapsComponents
+@using GoogleMapsComponents.Maps
+
+@* Vejle lat long 55.70927 N, 9.5357 E*@
+
+
+<h1>google maps implementation </h1>
+
+<div style="height:500px">
+    <GoogleMap @ref="@_map1" Id="map1" Options="@mapOptions" Height="100%" OnAfterInit="AfterMapRender"></GoogleMap>
+</div>
+
+@code {
+    private GoogleMap? _map1;
+    private MapOptions? mapOptions; // To fix bugs -- ? nullable, or set to required og initialise them in the constructor,
+
+    protected override void OnInitialized()
+    {
+        mapOptions = new MapOptions()
+        {
+            Zoom = 13,
+            Center = new LatLngLiteral(55.70927, 9.5357), // lat, lng
+            MapTypeId = MapTypeId.Hybrid
+        };
+    }
+
+    private async Task AfterMapRender()
+    {
+        Console.WriteLine("Map initialized"); // test for at se om kortet bliver loaded 
+        //await LatLngBounds.CreateAsync(_map1.JsRuntime);
+    }
+}
