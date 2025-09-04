@@ -9,9 +9,6 @@
 
 @inject IConfiguration Configuration
 
-@* Vejle lat long 55.70927 N, 9.5357 E*@
-
-
 <h1>google maps implementation </h1>
 
 <div style="height:500px">
@@ -27,7 +24,7 @@
         mapOptions = new MapOptions()
         {
             Zoom = 13,
-            Center = new LatLngLiteral(55.70927, 9.5357), // lat, lng
+            Center = new LatLngLiteral(55.70927, 9.5357), // lat, lng, Vejle 55.70927 N, 9.5357 E
             MapTypeId = MapTypeId.Hybrid
         };
     }
