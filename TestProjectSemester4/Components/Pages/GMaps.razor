@@ -9,14 +9,13 @@
 
 @inject IConfiguration Configuration
 
-<h1>google maps implementation </h1>
+<h1>google maps without markers </h1>
 
 <div style="height:500px">
-    <GoogleMap Id="map1" Options="@mapOptions" Height="500px" ApiKey="@Configuration["ApiKey:GoogleMapsApiKey"]"></GoogleMap>
+    <GoogleMap Id="map1" Options="@mapOptions" Height="500px"></GoogleMap>
 </div>
 
 @code {
-    //private GoogleMap? _map1;
     private MapOptions? mapOptions; // To fix bugs -- ? nullable, or set to required og initialise them in the constructor,
 
     protected override void OnInitialized()
